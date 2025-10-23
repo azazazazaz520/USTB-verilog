@@ -3,6 +3,27 @@ module top_module (
     input y, 
     output z
     );
-    
-endmodule   
+    wire w1,w2,w3,w4;
+    A IA1(
+        .x(x),
+        .y(y),
+        .z(w1)
+    );
+    A IA2(
+        .x(x),
+        .y(y),
+        .z(w2)
+    );
+    A IA3(
+        .x(x),
+        .y(y),
+        .z(w3)
+    );
+    A IA4(
+        .x(x),
+        .y(y),
+        .z(w4)
+    );
+    assign z = ((w1 | w2) ^ (w3 & w4));
+endmodule
 
