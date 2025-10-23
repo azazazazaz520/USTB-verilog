@@ -9,17 +9,17 @@ module top_module (
         .y(y),
         .z(w1)
     );
-    A IA2(
+    B IB1(
         .x(x),
         .y(y),
         .z(w2)
     );
-    A IA3(
+    A IA2(
         .x(x),
         .y(y),
         .z(w3)
     );
-    A IA4(
+    B IB2(
         .x(x),
         .y(y),
         .z(w4)
