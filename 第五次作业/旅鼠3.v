@@ -79,7 +79,7 @@ always@(*) begin
                 next_state = FALLing;//继续下落
             end            
         end
-        DIGGING：begin
+        DIGGING:begin
             if (!ground) begin
                     next_state = FALLing;  // 地面消失，进入下落状态
                 end else begin
@@ -115,13 +115,13 @@ always@(*) begin
             walk_left = 0;
             walk_right = 0;
             aaah = 0;
-            digging = 0;
+            digging = 1;
         end
         default: begin
             walk_left = 1;
             walk_right = 0;
             aaah = 0;
-            digging = 1;
+            digging = 0;
         end
     endcase
 end
