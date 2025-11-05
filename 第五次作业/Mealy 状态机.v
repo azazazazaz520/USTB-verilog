@@ -19,12 +19,11 @@ module mealy (
             state <= next_state;
     end
 
-    
     always @(*) begin
         case (state)
             A: begin
                 if (in)
-                    next_state = B;
+                    next_state = B; 
                 else
                     next_state = A;
             end
@@ -32,19 +31,17 @@ module mealy (
                 if (in)
                     next_state = B;
                 else
-                    next_state = A;
+                    next_state = A; 
             end
             default: next_state = A;
         endcase
     end
 
-    
+   
     always @(*) begin
-        case (state)
-            A: out = (in) ? 1'b1 : 1'b0;
-            B: out = (in) ? 1'b1 : 1'b0;
-            default: out = 1'b0;
-        endcase
+        out = (state == B) ? 1'b1 : 1'b0;
+        if (!in)
+            out = 1'b0;
     end
 
 endmodule
