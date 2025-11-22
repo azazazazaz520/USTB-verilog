@@ -8,8 +8,8 @@ module proc_fsm (
     input wire [1:0] Ry,
 
     output wire Done,
-    output wire [3:0] Rin,
-    output wire [3:0] Rout,
+    output wire [3:0] Rin,//R0,...,R3寄存器的输入是否有效
+    output wire [3:0] Rout,//R0,...,R3寄存器的输出是否有效
     output wire Ain,
     output wire Gin,
     output wire Gout,
